@@ -1,0 +1,47 @@
+general {
+colors = true
+interval = 5 
+
+}
+
+order += "tztime melbourne"
+order += "volume master"
+order += "wireless wlp3s0"
+order += "cpu_temperature all"
+order += "battery all"
+order += "tztime local"
+
+wireless wlp3s0{
+format_up = "WiFi: %quality %ip"
+}
+battery all {
+format = "Battery: %percentage %consumption"
+}
+tztime local {
+        format = " %d-%m	%H:%M:%S"       
+}
+tztime melbourne {
+
+format = "Melbourne time: %H:%M"
+timezone = "Australia/Melbourne"
+
+}
+
+
+cpu_temperature all {
+format = "CPU Temp: %degrees °C"
+}
+
+volume master {
+
+format = "♪: %volume"
+
+format_muted = "♪: muted (%volume)"
+
+device = "default"
+
+mixer = "Master"
+
+mixer_idx = 0
+
+}
